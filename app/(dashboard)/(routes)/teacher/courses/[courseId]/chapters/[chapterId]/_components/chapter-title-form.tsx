@@ -10,13 +10,7 @@ import { toast } from "react-hot-toast"
 import { Pencil } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import {
- Form,
- FormControl,
- FormField,
- FormItem,
- FormMessage
-} from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 
 interface ChapterTitleFormProps {
  initialData: {
@@ -30,11 +24,7 @@ const formSchema = z.object({
  title: z.string().min(1)
 })
 
-export const ChapterTitleForm = ({
- initialData,
- courseId,
- chapterId
-}: ChapterTitleFormProps) => {
+export const ChapterTitleForm = ({ initialData, courseId, chapterId }: ChapterTitleFormProps) => {
  const [isEditing, setIsEditing] = useState(false)
 
  const toggleEdit = () => setIsEditing((current) => !current)

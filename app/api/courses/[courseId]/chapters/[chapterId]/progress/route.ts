@@ -2,14 +2,7 @@ import { NextResponse } from "next/server"
 import { auth } from "@clerk/nextjs"
 import { db } from "@/lib/db"
 
-export async function PUT(req: Request, {
- params
-}: {
- params: {
-  courseId: string,
-  chapterId: string
- }
-}) {
+export async function PUT(req: Request, { params }: { params: { courseId: string, chapterId: string }}) {
  try {
   const { userId } = auth()
   const { isCompleted } = await req.json()

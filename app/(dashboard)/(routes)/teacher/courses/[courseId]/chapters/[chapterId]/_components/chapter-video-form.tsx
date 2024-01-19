@@ -23,11 +23,7 @@ const formSchema = z.object({
  videoUrl: z.string().min(1)
 })
 
-export const ChapterVideoForm = ({
- initialData,
- courseId,
- chapterId
-}: ChapterVideoFormProps) => {
+export const ChapterVideoForm = ({ initialData, courseId, chapterId }: ChapterVideoFormProps) => {
  const [isEditing, setIsEditing] = useState(false)
 
  const toggleEdit = () => setIsEditing((current) => !current)

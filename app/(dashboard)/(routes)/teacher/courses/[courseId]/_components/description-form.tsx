@@ -12,13 +12,7 @@ import { Course } from "@prisma/client"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Pencil } from "lucide-react"
-import {
- Form,
- FormControl,
- FormField,
- FormItem,
- FormMessage
-} from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 
 interface DescriptionFormProps {
  initialData: Course
@@ -31,10 +25,7 @@ const formSchema = z.object({
  })
 })
 
-export const DescriptionForm = ({
- initialData,
- courseId
-}: DescriptionFormProps) => {
+export const DescriptionForm = ({ initialData, courseId }: DescriptionFormProps) => {
  const [isEditing, setIsEditing] = useState(false)
 
  const toggleEdit = () => setIsEditing((current) => !current)

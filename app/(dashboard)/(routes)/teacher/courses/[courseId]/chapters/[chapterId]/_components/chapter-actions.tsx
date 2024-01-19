@@ -15,12 +15,7 @@ interface ChapterActionProps {
  isPublished: boolean
 }
 
-export const ChapterActions = ({
- disabled,
- courseId,
- chapterId,
- isPublished
-}: ChapterActionProps) => {
+export const ChapterActions = ({ disabled, courseId, chapterId, isPublished }: ChapterActionProps) => {
  const router = useRouter()
  const [isLoading, setIsLoading] = useState(false)
 

@@ -3,15 +3,7 @@
 import { Category } from "@prisma/client"
 import { IconType } from "react-icons"
 import { CategoryItem } from "./category-item"
-import {
- FcEngineering,
- FcFilmReel,
- FcMultipleDevices,
- FcMusic,
- FcOldTimeCamera,
- FcSalesPerformance,
- FcSportsMode
-} from "react-icons/fc"
+import { FcEngineering, FcFilmReel, FcMultipleDevices, FcMusic, FcOldTimeCamera, FcSalesPerformance, FcSportsMode } from "react-icons/fc"
 
 interface CategoriesProps {
  items: Category[]

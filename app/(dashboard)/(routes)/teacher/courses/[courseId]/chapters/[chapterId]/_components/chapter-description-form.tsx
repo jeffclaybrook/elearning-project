@@ -13,13 +13,7 @@ import { Pencil } from "lucide-react"
 import { Preview } from "@/components/preview"
 import { Editor } from "@/components/editor"
 import { Button } from "@/components/ui/button"
-import {
- Form,
- FormControl,
- FormField,
- FormItem,
- FormMessage
-} from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 
 interface ChapterDescriptionFormProps {
  initialData: Chapter
@@ -31,11 +25,7 @@ const formSchema = z.object({
  description: z.string().min(1)
 })
 
-export const ChapterDescriptionForm = ({
- initialData,
- courseId,
- chapterId
-}: ChapterDescriptionFormProps) => {
+export const ChapterDescriptionForm = ({ initialData, courseId, chapterId }: ChapterDescriptionFormProps) => {
  const [isEditing, setIsEditing] = useState(false)
 
  const toggleEdit = () => setIsEditing((current) => !current)

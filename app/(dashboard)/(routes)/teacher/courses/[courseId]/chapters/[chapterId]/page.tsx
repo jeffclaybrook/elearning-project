@@ -9,21 +9,9 @@ import { ChapterDescriptionForm } from "./_components/chapter-description-form"
 import { ChapterAccessForm } from "./_components/chapter-access-form"
 import { ChapterVideoForm } from "./_components/chapter-video-form"
 import { ChapterActions } from "./_components/chapter-actions"
-import {
- ArrowLeft,
- Eye,
- LayoutDashboard,
- Video
-} from "lucide-react"
+import { ArrowLeft, Eye, LayoutDashboard, Video } from "lucide-react"
 
-const ChapterIdPage = async ({
- params
-}: {
- params: {
-  courseId: string,
-  chapterId: string
- }
-}) => {
+const ChapterIdPage = async ({ params }: { params: { courseId: string, chapterId: string }}) => {
  const { userId } = auth()
 
  if (!userId) {

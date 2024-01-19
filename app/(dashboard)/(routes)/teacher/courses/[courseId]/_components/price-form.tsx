@@ -13,13 +13,7 @@ import { Course } from "@prisma/client"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Pencil } from "lucide-react"
-import {
- Form,
- FormControl,
- FormField,
- FormItem,
- FormMessage
-} from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 
 interface PriceFormProps {
  initialData: Course
@@ -30,10 +24,7 @@ const formSchema = z.object({
  price: z.coerce.number()
 })
 
-export const PriceForm = ({
- initialData,
- courseId
-}: PriceFormProps) => {
+export const PriceForm = ({ initialData, courseId }: PriceFormProps) => {
  const [isEditing, setIsEditing] = useState(false)
 
  const toggleEdit = () => setIsEditing((current) => !current)

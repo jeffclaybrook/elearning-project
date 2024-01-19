@@ -12,13 +12,7 @@ import { Course } from "@prisma/client"
 import { Pencil } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Combobox } from "@/components/ui/combobox"
-import {
- Form,
- FormControl,
- FormField,
- FormItem,
- FormMessage
-} from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 
 interface CategoryFormProps {
  initialData: Course

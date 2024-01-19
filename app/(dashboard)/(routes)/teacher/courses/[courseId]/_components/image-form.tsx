@@ -9,11 +9,7 @@ import { Course } from "@prisma/client"
 import { toast } from "react-hot-toast"
 import { Button } from "@/components/ui/button"
 import { FileUpload } from "@/components/file-upload"
-import {
- Pencil,
- PlusCircle,
- ImageIcon
-} from "lucide-react"
+import { Pencil, PlusCircle, ImageIcon } from "lucide-react"
 
 interface ImageFormProps {
  initialData: Course
@@ -26,10 +22,7 @@ const formSchema = z.object({
  })
 })
 
-export const ImageForm = ({
- initialData,
- courseId
-}: ImageFormProps) => {
+export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
  const [isEditing, setIsEditing] = useState(false)
 
  const toggleEdit = () => setIsEditing((current) => !current)

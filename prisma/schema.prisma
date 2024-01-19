@@ -1,19 +1,20 @@
 generator client {
   provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
 datasource db {
-  provider     = "mongodb"
+  provider     = "mysql"
   url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
 model Course {
-  id          String  @id @default(uuid()) @map("_id")
+  id          String  @id @default(uuid())
   userId      String
-  title       String  @db.ObjectId
-  description String? @db.ObjectId
-  imageUrl    String? @db.ObjectId
+  title       String @db.Text
+  description String? @db.Text
+  imageUrl    String? @db.Text
   price       Float?
   isPublished Boolean @default(false)
 
@@ -28,18 +29,19 @@ model Course {
   updatedAt DateTime @updatedAt
 
   @@index([categoryId])
+  @@fulltext([title])
 }
 
 model Category {
-  id      String   @id @default(uuid()) @map("_id")
+  id      String   @id @default(uuid())
   name    String   @unique
   courses Course[]
 }
 
 model Attachment {
-  id   String @id @default(uuid()) @map("_id")
+  id   String @id @default(uuid())
   name String
-  url  String @db.ObjectId
+  url  String @db.Text
 
   courseId String
   course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
@@ -51,10 +53,10 @@ model Attachment {
 }
 
 model Chapter {
-  id          String  @id @default(uuid()) @map("_id")
+  id          String  @id @default(uuid())
   title       String
-  description String? @db.ObjectId
-  videoUrl    String? @db.ObjectId
+  description String? @db.Text
+  videoUrl    String? @db.Text
   position    Int
   isPublished Boolean @default(false)
   isFree      Boolean @default(false)
@@ -73,7 +75,7 @@ model Chapter {
 }
 
 model MuxData {
-  id         String  @id @default(uuid()) @map("_id")
+  id         String  @id @default(uuid())
   assetId    String
   playbackId String?
 
@@ -82,7 +84,7 @@ model MuxData {
 }
 
 model UserProgress {
-  id     String @id @default(uuid()) @map("_id")
+  id     String @id @default(uuid())
   userId String
 
   chapterId String
@@ -98,7 +100,7 @@ model UserProgress {
 }
 
 model Purchase {
-  id     String @id @default(uuid()) @map("_id")
+  id     String @id @default(uuid())
   userId String
 
   courseId String
@@ -112,7 +114,7 @@ model Purchase {
 }
 
 model StripeCustomer {
-  id               String @id @default(uuid()) @map("_id")
+  id               String @id @default(uuid())
   userId           String @unique
   stripeCustomerId String @unique
 

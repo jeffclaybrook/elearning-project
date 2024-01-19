@@ -5,12 +5,7 @@ import { cn } from "@/lib/utils"
 import { Grip, Pencil } from "lucide-react"
 import { Chapter } from "@prisma/client"
 import { Badge } from "@/components/ui/badge"
-import {
- DragDropContext,
- Droppable,
- Draggable,
- DropResult
-} from "@hello-pangea/dnd"
+import { DragDropContext, Droppable, Draggable, DropResult } from "@hello-pangea/dnd"
 
 interface ChaptersListProps {
  items: Chapter[]
@@ -21,11 +16,7 @@ interface ChaptersListProps {
  onEdit: (id: string) => void
 }
 
-export const ChaptersList = ({
- items,
- onReorder,
- onEdit
-}: ChaptersListProps) => {
+export const ChaptersList = ({ items, onReorder, onEdit }: ChaptersListProps) => {
  const [isMounted, setIsMounted] = useState(false)
  const [chapters, setChapters] = useState(items)
 

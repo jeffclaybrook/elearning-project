@@ -9,15 +9,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import {
- Form,
- FormControl,
- FormDescription,
- FormField,
- FormLabel,
- FormMessage,
- FormItem
-} from "@/components/ui/form"
+import { Form, FormControl, FormDescription, FormField, FormLabel, FormMessage, FormItem } from "@/components/ui/form"
 
 const formSchema = z.object({
  title: z.string().min(1, {

@@ -13,13 +13,7 @@ import { ChaptersList } from "./chapters-list"
 import { Loader2, PlusCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import {
- Form,
- FormControl,
- FormField,
- FormItem,
- FormMessage
-} from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 
 interface ChaptersFormProps {
  initialData: Course & {
@@ -32,10 +26,7 @@ const formSchema = z.object({
  title: z.string().min(1)
 })
 
-export const ChaptersForm = ({
- initialData,
- courseId
-}: ChaptersFormProps) => {
+export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
  const [isCreating, setIsCreating] = useState(false)
  const [isUpdating, setIsUpdating] = useState(false)
 

@@ -5,25 +5,8 @@ import { useState } from "react"
 import { PlusCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import {
- Table,
- TableBody,
- TableCell,
- TableHead,
- TableHeader,
- TableRow
-} from "@/components/ui/table"
-import {
- ColumnDef,
- ColumnFiltersState,
- SortingState,
- flexRender,
- getCoreRowModel,
- getFilteredRowModel,
- getPaginationRowModel,
- getSortedRowModel,
- useReactTable
-} from "@tanstack/react-table"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { ColumnDef, ColumnFiltersState, SortingState, flexRender, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useReactTable } from "@tanstack/react-table"
 
 interface DataTableProps<TData, TValue> {
  columns: ColumnDef<TData, TValue>[]

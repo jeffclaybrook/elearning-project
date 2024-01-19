@@ -12,13 +12,7 @@ import { Chapter } from "@prisma/client"
 import { Pencil } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
-import {
- Form,
- FormControl,
- FormDescription,
- FormField,
- FormItem
-} from "@/components/ui/form"
+import { Form, FormControl, FormDescription, FormField, FormItem } from "@/components/ui/form"
 
 interface ChapterAccessFormProps {
  initialData: Chapter
@@ -30,11 +24,7 @@ const formSchema = z.object({
  isFree: z.boolean().default(false)
 })
 
-export const ChapterAccessForm = ({
- initialData,
- courseId,
- chapterId
-}: ChapterAccessFormProps) => {
+export const ChapterAccessForm = ({ initialData, courseId, chapterId }: ChapterAccessFormProps) => {
  const [isEditing, setIsEditing] = useState(false)
 
  const toggleEdit = () => setIsEditing((current) => !current)

@@ -11,20 +11,9 @@ import { PriceForm } from "./_components/price-form"
 import { AttachmentForm } from "./_components/attachment-form"
 import { ChaptersForm } from "./_components/chapters-form"
 import { Actions } from "./_components/actions"
-import {
- CircleDollarSign,
- File,
- LayoutDashboard,
- ListChecks
-} from "lucide-react"
+import { CircleDollarSign, File, LayoutDashboard, ListChecks } from "lucide-react"
 
-const CourseIdPage = async ({
- params
-}: {
- params: {
-  courseId: string
- }
-}) => {
+const CourseIdPage = async ({ params }: { params: { courseId: string }}) => {
  const { userId } = auth()
 
  if (!userId) {

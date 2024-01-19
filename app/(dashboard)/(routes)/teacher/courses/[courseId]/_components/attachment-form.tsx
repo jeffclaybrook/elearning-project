@@ -8,12 +8,7 @@ import { Attachment, Course } from "@prisma/client"
 import { toast } from "react-hot-toast"
 import { Button } from "@/components/ui/button"
 import { FileUpload } from "@/components/file-upload"
-import {
- PlusCircle,
- File,
- Loader2,
- X
-} from "lucide-react"
+import { PlusCircle, File, Loader2, X } from "lucide-react"
 
 interface AttachmentFormProps {
  initialData: Course & {

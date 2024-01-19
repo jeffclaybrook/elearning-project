@@ -1,10 +1,10 @@
 import { PrismaClient } from "@prisma/client"
 
-const database = new PrismaClient()
+const prisma = new PrismaClient()
 
 async function main() {
  try {
-  await database.category.createMany({
+  await prisma.category.createMany({
    data: [
     { name: "Computer Science" },
     { name: "Music" },
@@ -19,7 +19,7 @@ async function main() {
  } catch (error) {
   console.log("Error seeding the database categories", error)
  } finally {
-  await database.$disconnect()
+  await prisma.$disconnect()
  }
 }
 
